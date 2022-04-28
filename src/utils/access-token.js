@@ -41,9 +41,17 @@ class AccessToken {
   }
 }
 
-const accessToken = new AccessToken(
-  process.env.JWT_PRIVATE_KEY,
-  process.env.JWT_PUBLIC_KEY
-)
+const JWT_PRIVATE_KEY = `-----BEGIN EC PRIVATE KEY-----
+MHcCAQEEIFqLFRYqYTurQy06FhCOzKE9ai7Wb/A/ciCxb/BmqhOXoAoGCCqGSM49
+AwEHoUQDQgAEMBgul03EbxpE1giYUH/VJzq0psF/zhxRbnwvlr9DhQInEiA1OQRO
+lfRJlKqJh0QLTRjdQDA+nPTOjcsmmqIeFg==
+-----END EC PRIVATE KEY-----`
+
+const JWT_PUBLIC_KEY = `-----BEGIN PUBLIC KEY-----
+MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEMBgul03EbxpE1giYUH/VJzq0psF/
+zhxRbnwvlr9DhQInEiA1OQROlfRJlKqJh0QLTRjdQDA+nPTOjcsmmqIeFg==
+-----END PUBLIC KEY-----`
+
+const accessToken = new AccessToken(JWT_PRIVATE_KEY, JWT_PUBLIC_KEY)
 
 module.exports = { accessToken }

@@ -22,6 +22,7 @@ module.exports = async (req, res, next) => {
     next()
   } catch (e) {
     logger.color('red').error(e.stack)
+    res.clearCookie('access_token')
     next()
     return
   }
